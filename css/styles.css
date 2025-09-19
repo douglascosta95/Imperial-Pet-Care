@@ -1,0 +1,176 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #fdfdfd;
+}
+
+.container {
+    position: relative;
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px;
+    border-bottom: 2px solid #87cefa;   
+}
+
+.banner p {
+    font-size: 24px;
+    font-style: italic;
+}
+
+.img-banner {
+    margin-top: 10px;
+    margin: auto 0;
+    text-align: center;
+}
+
+.links-banner a{
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-left: 30px;
+    margin-right: 10px;
+    color: black;
+    border: 2px solid #87cefa;
+    padding: 5px;
+    font-weight: bold;
+ }
+
+ .links-banner a:hover {
+  background-color: #87cefa;
+  opacity: 0.5;
+  cursor: pointer;
+ }
+
+
+#nossos-servicos {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#nossos-servicos img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 50px;
+}
+
+#nossos-servicos img:hover {
+  opacity: 0.5;
+}
+
+.card {
+  max-width: 350px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  border: 5px solid #87cefa;
+}
+
+.card p {
+  margin-top: 8px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#nossos-servicos h1{
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+#quem-somos h1 {
+    margin-top: 50px;
+}
+#quem-somos p{
+    font-size: 24px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+iframe {
+display: flex;
+justify-content: center;
+width: 100%;
+margin: 50px auto;
+border-radius: 10px;
+}
+
+#onde-estamos h1 {
+margin-top: 50px;
+}
+
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px; 
+  right: 20px;   
+  z-index: 100; 
+  border: 100%;
+  opacity: 0.7;
+}
+
+.whatsapp-float img {
+  width: 100%;
+  height: auto;
+  border-radius: 100%; 
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+
+.whatsapp-float img:hover {
+  transform: scale(1.1); 
+}
+
+.contato {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.links-contato {
+  padding: 5px 30px;
+  border: 2px solid #87cefa;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.links-contato img {
+  width: 50px;
+}
+
+.links-contato a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 10px;
+}
+
+.links-contato a:hover {
+  background-color: #87cefa;
+  opacity: 0.5;
+  color: #000;
+}
+
+.rodape {
+    text-align: center;
+    background-color: #87cefa;
+}
+
+.rodape p {
+    font-size: 15px;
+    font-weight: bold;    
+}

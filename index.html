@@ -3,80 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imperial Pet Care</title>
+    <title>Imperial Pet Care - Aqui o seu pet é a majestade!</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="container">
+
+    <header class="main-header">
         <div class="banner">
-            <img src="img/logo.webp" alt="Logo Imperial Dog Care" width="100px">
-            <h1>Imperial Pet Care</h1>
-            <p>Aqui o seu pet é a majestade!</p>
+            <img src="img/logo.webp" alt="Logo Imperial Pet Care" class="logo">
+            <div class="header-text">
+                <h1>Imperial Pet Care</h1>
+                <p>Aqui o seu pet é a majestade!</p>
+            </div>
         </div>
-        <div class="img-banner">
-            <img src="img/banner.jpg" alt="cães e gatos">
+        <nav class="nav-banner">
+            <div class="img-banner">
+                <img src="img/banner.jpg" alt="Cães e gatos felizes">
+            </div>
             <div class="links-banner">
                 <a href="#quem-somos">Quem somos</a>
                 <a href="#nossos-servicos">Nossos serviços</a>
+                <a href="#agendamento">Agendar & Orçamento</a>
                 <a href="#onde-estamos">Onde estamos</a>
                 <a href="#contato">Contato</a>
             </div>
-        </div>
-        <div id="quem-somos">
-            <h1>Quem somos?</h1>
-            <p>No Imperial Pet Care, acreditamos que cada pet é único e merece todo o carinho e cuidado como um verdadeiro membro da família.
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Quem Somos -->
+        <section id="quem-somos" class="secao">
+            <h2>Quem somos?</h2>
+            <p>
+                No Imperial Pet Care, acreditamos que cada pet é único e merece todo o carinho e cuidado como um verdadeiro membro da família.
                 Nossa missão é oferecer serviços e produtos de qualidade, sempre priorizando o bem-estar, a saúde e a felicidade dos animais de estimação.
                 Contamos com uma equipe apaixonada por pets, formada por profissionais qualificados e prontos para atender com dedicação. Aqui, 
                 você encontra desde banho e tosa especializados, atendimento veterinário de confiança, até uma grande variedade de produtos e acessórios 
                 para deixar seu companheiro ainda mais saudável e feliz. No Imperial Pet Care, o seu pet é tratado com respeito, amor e cuidado — afinal, 
-                ele é parte da sua vida, e também da nossa. ❤️</p>
-        </div>
-        <h1>Nossos Serviços:</h1>
-    <div id="nossos-servicos">
-    <div class="card">
-            <img src="img/banho-e-tosa.jpg" alt="Banho e Tosa">
-            <p>Banho e tosa</p>
+                ele é parte da sua vida, e também da nossa. ❤️
+            </p>
+        </section>
+
+        <!-- Nossos Serviços -->
+        <section id="nossos-servicos" class="secao">
+            <h2>Nossos Serviços</h2>
+            <div class="cards-grid">
+                <div class="card" data-service="banho-tosa">
+                    <img src="img/banho-e-tosa.jpg" alt="Banho e Tosa">
+                    <h3>Banho e tosa</h3>
+                </div>
+                <div class="card" data-service="produtos">
+                    <img src="img/produtos.webp" alt="Nossos produtos">
+                    <h3>Variedade de produtos</h3>
+                </div>
+                <div class="card" data-service="veterinaria">
+                    <img src="img/veterinário.png" alt="Veterinária">
+                    <h3>Veterinária</h3>
+                </div>
+                <div class="card" data-service="delivery">
+                    <img src="img/delivery.avif" alt="Sistema leva e traz">
+                    <h3>Sistema leva e traz</h3>
+                </div>
             </div>
-            <div class="card">
-           <img src="img/produtos.webp" alt="Nossos produtos">
-            <p>Variedade de produtos</p>
+        </section>
+
+        <!-- Agendamento & Simulador de Orçamento Dinâmico -->
+        <section id="agendamento" class="secao agendamento-box">
+            <h2>Simulador de Orçamento & Agendamento</h2>
+            <p class="subtitulo">Monte o pacote ideal para o seu pet e envie direto para o nosso atendimento:</p>
+
+            <form id="booking-form" class="booking-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="pet-name">Nome do Pet:</label>
+                        <input type="text" id="pet-name" placeholder="Ex: Bob, Mel, Thor..." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tutor-name">Seu Nome:</label>
+                        <input type="text" id="tutor-name" placeholder="Ex: Douglas Costa" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pet-type">Tipo de Pet:</label>
+                        <select id="pet-type" required>
+                            <option value="Cachorro">Cachorro</option>
+                            <option value="Gato">Gato</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pet-size">Porte do Pet:</label>
+                        <select id="pet-size" required>
+                            <option value="pequeno" data-multiplier="1">Pequeno (até 10kg)</option>
+                            <option value="medio" data-multiplier="1.25">Médio (10kg a 25kg)</option>
+                            <option value="grande" data-multiplier="1.5">Grande (acima de 25kg)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="servicos-selecao">
+                    <label class="section-label">Selecione os serviços:</label>
+                    <div class="checkbox-group">
+                        <label class="check-item">
+                            <input type="checkbox" name="servico" value="Banho Completo" data-base-price="50" checked>
+                            <span>Banho Completo (+ R$ 50,00)</span>
+                        </label>
+                        <label class="check-item">
+                            <input type="checkbox" name="servico" value="Tosa Higiênica" data-base-price="25">
+                            <span>Tosa Higiênica (+ R$ 25,00)</span>
+                        </label>
+                        <label class="check-item">
+                            <input type="checkbox" name="servico" value="Tosa da Raça / Geral" data-base-price="40">
+                            <span>Tosa Geral (+ R$ 40,00)</span>
+                        </label>
+                        <label class="check-item">
+                            <input type="checkbox" name="servico" value="Hidratação de Pelagem" data-base-price="30">
+                            <span>Hidratação Premium (+ R$ 30,00)</span>
+                        </label>
+                        <label class="check-item">
+                            <input type="checkbox" name="servico" value="Corte de Unhas" data-base-price="15">
+                            <span>Corte de Unhas (+ R$ 15,00)</span>
+                        </label>
+                        <label class="check-item highlight">
+                            <input type="checkbox" id="check-delivery" name="servico" value="Leva e Traz" data-base-price="20">
+                            <span>🚐 Incluir Sistema Leva e Traz (+ R$ 20,00 fixo)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="resumo-box">
+                    <div class="preco-display">
+                        <span>Estimativa Total:</span>
+                        <strong id="total-price">R$ 50,00</strong>
+                    </div>
+                    <button type="submit" class="btn-whatsapp">
+                        <span>Confirmar e Agendar no WhatsApp</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Onde Estamos -->
+        <section id="onde-estamos" class="secao">
+            <h2>Onde estamos</h2>
+            <div class="map-responsive">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1975878427763!2d-46.65653432386762!3d-23.56134676159515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%201500%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" width="100%" height="380" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <div class="card"><img src="img/veterinário.png" alt="Veterinária">
-            <p>Veterinária</p>
-            </div>
-            <div class="card">
-                <img src="img/delivery.avif" alt="Sistema leva e traz">
-            <p>Sistema leva e traz</p>
-            </div>
-        </div>
-        <div id="onde-estamos">
-            <h1>Onde estamos</h1>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.2452579614173!2d-46.810386900000005!3d-23.487674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cefde684963105%3A0x1edd3581b4746457!2sR.%20Duarte%20da%20Costa%2C%20784%20-%20Parque%20Imperial%2C%20Barueri%20-%20SP%2C%2006462-120!5e0!3m2!1spt-BR!2sbr!4v1755376083176!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        <div id="contato">
-        <div class="float-whatsapp">
-            <a href="https://wa.me/5599999999999" target="_blank" class="whatsapp-float">
-          <img src="img/whatsapp.jpg" alt="WhatsApp"></a>
-        </div>
-        <div class="contato">
-            
-            <div class="links-contato">
-            <img src="img/localizacao icone.png" alt="Localizacao"> <a href="#">Rua Duarte da Costa, 784 Parque Imperial, Barueri</a>
-            </div>
-            <div class="links-contato">
-            <img src="img/instagram.png" alt="instagram.com"> <a href="#">@imperialpetcare</a>
-            </div>
-            <div class="links-contato">
-            <img src="img/o-email.png" alt="mailto:abcde@gmail.com"> <a href="#">E-mail</a>
-            </div>
-            <div class="links-contato">
-            <img src="img/whatsappblack.png" alt="tel:551199999999"><a href="#">Telefone</a>
-            </div>
-        </div>
-        <div class="rodape">
-            <p>Criado por Douglas Costa</p>
-        </div>
+        </section>
+    </main>
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <div class="float-whatsapp">
+        <a href="https://wa.me/5511999999999" target="_blank" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
+            <img src="img/whatsapp.jpg" alt="WhatsApp">
+        </a>
     </div>
-    </div>
+
+    <!-- Rodapé -->
+    <footer id="contato" class="main-footer">
+        <div class="contato-grid">
+            <div class="links-contato">
+                <img src="img/localizacao icone.png" alt="Localização">
+                <span>Av. Paulista, 1500 - Bela Vista, São Paulo - SP</span>
+            </div>
+            <div class="links-contato">
+                <img src="img/instagram.png" alt="Instagram">
+                <a href="https://instagram.com" target="_blank">@imperialpetcare</a>
+            </div>
+            <div class="links-contato">
+                <img src="img/o-email.png" alt="E-mail">
+                <a href="mailto:contato@imperialpetcare.com.br">contato@imperialpetcare.com.br</a>
+            </div>
+            <div class="links-contato">
+                <img src="img/whatsappblack.png" alt="Telefone">
+                <a href="tel:551199999999">(11) 99999-9999</a>
+            </div>
+        </div>
+       <div class="rodape-autor">
+            <p>
+                Desenvolvido por <strong>Douglas Costa</strong>
+                <a href="https://www.linkedin.com/in/douglas-costa-5a4a5017b/" target="_blank" rel="noopener noreferrer" class="linkedin-link" title="Aceder ao LinkedIn de Douglas Costa" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="linkedin-icon">
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                    </svg>
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
 </body>
 </html>
